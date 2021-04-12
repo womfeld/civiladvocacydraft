@@ -1,72 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/officialLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#DC1616">
 
-
-
         <TextView
             android:id="@+id/officeTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="182dp"
-            android:layout_marginLeft="182dp"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="183dp"
-            android:layout_marginRight="183dp"
             android:layout_marginBottom="14dp"
             android:text="Title"
             android:textColor="#FFFFFF"
             android:textSize="24sp"
             app:layout_constraintBottom_toTopOf="@+id/politicianName"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline2" />
+            app:layout_constraintStart_toStartOf="@+id/guideline10"
+            app:layout_constraintTop_toTopOf="@+id/guideline2"
+            app:layout_constraintVertical_bias="0.166" />
 
         <TextView
             android:id="@+id/politicianName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="173dp"
-            android:layout_marginLeft="173dp"
-            android:layout_marginEnd="174dp"
-            android:layout_marginRight="174dp"
-            android:layout_marginBottom="14dp"
+            android:layout_marginBottom="90dp"
             android:text="Name"
             android:textColor="#FFFFFF"
             android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@+id/partyLabel"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintBottom_toTopOf="@+id/guideline5"
+            app:layout_constraintStart_toStartOf="@+id/guideline10" />
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="240dp"
-            android:layout_height="219dp"
-            android:layout_marginStart="119dp"
-            android:layout_marginLeft="119dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="119dp"
-            android:layout_marginRight="119dp"
-            android:layout_marginBottom="32dp"
+            android:layout_width="236dp"
+            android:layout_height="246dp"
+            android:layout_marginTop="90dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
             android:onClick="officialPhotoClicked"
             android:scaleType="centerCrop"
-            app:layout_constraintBottom_toTopOf="@+id/guideline5"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.511"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.875"
+            app:layout_constraintStart_toStartOf="@+id/guideline10"
             app:layout_constraintTop_toTopOf="@+id/guideline1"
-            app:layout_constraintVertical_bias="0.4"
+            app:layout_constraintVertical_bias="1.0"
             tools:srcCompat="@drawable/missing" />
 
         <ImageButton
@@ -75,7 +61,7 @@
             android:layout_height="70dp"
             android:layout_marginStart="280dp"
             android:layout_marginLeft="280dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="4dp"
             android:contentDescription="youtubeButton"
             android:onClick="youtubeClicked"
             android:scaleType="centerCrop"
@@ -87,9 +73,9 @@
             android:id="@+id/twitterButton"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:layout_marginStart="163dp"
-            android:layout_marginLeft="163dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginStart="172dp"
+            android:layout_marginLeft="172dp"
+            android:layout_marginTop="4dp"
             android:contentDescription="twitterButton"
             android:onClick="twitterClicked"
             android:scaleType="centerCrop"
@@ -101,9 +87,9 @@
             android:id="@+id/facebookButton"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:layout_marginStart="46dp"
-            android:layout_marginLeft="46dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginStart="52dp"
+            android:layout_marginLeft="52dp"
+            android:layout_marginTop="4dp"
             android:contentDescription="facebookButton"
             android:onClick="facebookClicked"
             android:scaleType="centerCrop"
@@ -115,35 +101,33 @@
             android:id="@+id/partyLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="150dp"
-            android:layout_marginLeft="150dp"
-            android:layout_marginBottom="12dp"
+            android:layout_marginStart="108dp"
+            android:layout_marginLeft="108dp"
             android:text="Democratic Party"
             android:textColor="#FFFFFF"
-            app:layout_constraintBottom_toTopOf="@+id/guideline1"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintHorizontal_bias="0.579"
+            app:layout_constraintStart_toStartOf="@+id/guideline10"
+            app:layout_constraintTop_toTopOf="@+id/guideline1" />
 
         <TextView
             android:id="@+id/politicianWebsite"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="24dp"
+            android:layout_marginBottom="20dp"
             android:text="No website available"
             android:textColor="#FFFFFF"
             app:layout_constraintBottom_toTopOf="@+id/guideline6"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toStartOf="@+id/guideline10"
+            app:layout_constraintStart_toEndOf="@+id/websiteLabel" />
 
         <TextView
             android:id="@+id/websiteLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginBottom="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginBottom="20dp"
             android:text="Website"
             android:textColor="#FFFFFF"
             app:layout_constraintBottom_toTopOf="@+id/guideline6"
@@ -153,49 +137,49 @@
             android:id="@+id/addressLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
             android:text="Address:"
             android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toTopOf="@+id/guideline5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline5" />
+            app:layout_constraintTop_toTopOf="@+id/guideline1" />
 
         <TextView
             android:id="@+id/addressLineOne"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="24dp"
-            android:layout_marginRight="24dp"
             android:text="No address available"
             android:textColor="#FFFFFF"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline5" />
+            app:layout_constraintBottom_toTopOf="@+id/guideline5"
+            app:layout_constraintEnd_toStartOf="@+id/guideline10"
+            app:layout_constraintStart_toEndOf="@+id/addressLabel"
+            app:layout_constraintTop_toTopOf="@+id/guideline1" />
 
         <TextView
             android:id="@+id/phoneLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginBottom="36dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginBottom="40dp"
             android:text="Phone:"
             android:textColor="#FFFFFF"
             app:layout_constraintBottom_toTopOf="@+id/websiteLabel"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline5" />
 
         <TextView
             android:id="@+id/phoneNumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="24dp"
-            android:layout_marginRight="24dp"
-            android:layout_marginBottom="36dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="452dp"
+            android:layout_marginRight="452dp"
             android:text="No number available"
             android:textColor="#FFFFFF"
-            app:layout_constraintBottom_toTopOf="@+id/politicianWebsite"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline5" />
 
         <ImageView
             android:id="@+id/smallPhoto"
@@ -210,9 +194,10 @@
             android:onClick="partyLogoClicked"
             app:layout_constraintBottom_toTopOf="@+id/guideline5"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.571"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/imageView"
-            app:layout_constraintVertical_bias="0.928"
+            app:layout_constraintVertical_bias="0.226"
             app:srcCompat="@drawable/dem_logo" />
 
         <androidx.constraintlayout.widget.Guideline
@@ -260,10 +245,21 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.48" />
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-
 </ScrollView>
+
+
+
+
 
 

@@ -5,12 +5,15 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.text.InputType;
 import android.util.Log;
@@ -83,6 +86,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         //Fall back on
         //Determine location
+
+
+
+        recyclerView = findViewById(R.id.recycler);
+        pAdapter = new PoliticianAdapter(politicianList, this);
+
+
+
         mFusedLocationClient =
                 LocationServices.getFusedLocationProviderClient(this);
         determineLocation();
@@ -102,6 +113,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
         locationDisplay.setText(locationString);
+
 
 
 
@@ -303,12 +315,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public void updateData(ArrayList<Politician> pList) {
         politicianList.clear();
+
+
         politicianList.addAll(pList);
 
         //Just added
         locationDisplay.setText(pList.get(0).getDisplayAddress());
 
         pAdapter.notifyDataSetChanged();
+
+
     }
 
     public void downloadFailed() {
@@ -327,6 +343,34 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         AlertDialog dialog = builder.create();
         dialog.show();
 
+    }
+
+
+    public boolean doNetworkCheck() {
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo netInfo = cm.getActiveNetworkInfo();
+        if (cm == null) {
+            return false;
+        }
+
+        if (netInfo != null ) {
+            return true;
+        }
+
+        else {
+            return false;
+        }
+    }
+
+
+
+    public void networkErrorDialog( ){
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("No Network Connection");
+        builder.setMessage("Data cannot be accessed/loaded without internet connection.");
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 
 }
