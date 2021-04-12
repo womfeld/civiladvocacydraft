@@ -4,9 +4,11 @@ import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.util.Linkify;
 import android.view.View;
@@ -15,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -27,7 +30,12 @@ public class OfficialActivity extends AppCompatActivity  {
     private Politician p;
 
 
+    //Layout
+    private View olayout;
+
+
     //Text and image views
+    private TextView displayAddress;
     private TextView title;
     private TextView name;
     private TextView party;
@@ -67,6 +75,30 @@ public class OfficialActivity extends AppCompatActivity  {
                 return;
 
 
+
+
+            //Initialize layout
+            olayout = findViewById(R.id.officialLayout);
+
+
+            //Setting the appropriate background color
+            if (p.getParty().equals("Democratic Party")) {
+                olayout.setBackgroundColor(getResources().getColor(R.color.dem_blue));
+
+            }
+            else if (p.getParty().equals("Republican Party")) {
+                olayout.setBackgroundColor(getResources().getColor(R.color.rep_red));
+            }
+            else {
+                olayout.setBackgroundColor(getResources().getColor(R.color.black));
+            }
+
+
+
+
+            //Initialize display address
+            displayAddress = findViewById(R.id.officialDisplayAddress);
+            displayAddress.setText(p.getDisplayAddress());
 
             //Initialize text and image view references
             title = findViewById(R.id.officeTitle);
@@ -236,7 +268,7 @@ public class OfficialActivity extends AppCompatActivity  {
         else {
             //showMessage(ERROR_ICON, "NO NETWORK CONNECTION",
                     //"Data cannot be accessed/loaded without an Internet connection");
-            imageView.setImageResource(R.drawable.placeholder);
+            imageView.setImageResource(R.drawable.brokenimage);
         }
     }
 

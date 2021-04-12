@@ -36,8 +36,13 @@ public class PoliticianAdapter extends RecyclerView.Adapter<PoliticianViewHolder
     @Override
     public void onBindViewHolder(@NonNull PoliticianViewHolder holder, int position) {
         Politician p = politicians.get(position);
-        holder.pname.setText(p.getName());
         holder.ptitle.setText(p.getTitle());
+        String pn = p.getName();
+        String prty = p.getParty();
+        String r = pn + " (" + prty + ")";
+        //holder.pname.setText(p.getName());
+        holder.pname.setText(r);
+
 
     }
 

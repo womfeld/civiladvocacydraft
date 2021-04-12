@@ -16,10 +16,14 @@ public class PhotoActivity extends AppCompatActivity {
 
     private Politician p;
 
+    private View plyt;
+
     private TextView title;
     private TextView name;
     private ImageView imageView;
     private ImageView partyLogo;
+
+    private TextView textView;
 
 
 
@@ -36,6 +40,30 @@ public class PhotoActivity extends AppCompatActivity {
             p = (Politician) intent.getSerializableExtra("OfficialPhoto");
             if (p == null)
                 return;
+
+
+
+            //Initialize layout
+            plyt = findViewById(R.id.photoLayout);
+
+
+            //Initialize the title
+
+            textView = findViewById(R.id.textView);
+            textView.setText(p.getDisplayAddress());
+
+
+            //Setting the appropriate background color
+            if (p.getParty().equals("Democratic Party")) {
+                plyt.setBackgroundColor(getResources().getColor(R.color.dem_blue));
+
+            }
+            else if (p.getParty().equals("Republican Party")) {
+                plyt.setBackgroundColor(getResources().getColor(R.color.rep_red));
+            }
+            else {
+                plyt.setBackgroundColor(getResources().getColor(R.color.black));
+            }
 
 
 

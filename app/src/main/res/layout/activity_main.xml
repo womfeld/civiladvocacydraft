@@ -8,9 +8,10 @@
 
     <TextView
         android:id="@+id/location"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="@color/teal_700"
+        android:layout_width="407dp"
+        android:layout_height="38dp"
+        android:background="#6F4E93"
+        android:gravity="center_horizontal"
         android:text="Location"
         android:textAlignment="center"
         android:textAllCaps="false"
@@ -20,8 +21,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_constraintBottom_toTopOf="@id/recycler"
-        android:gravity="center_horizontal" />
+        tools:layout_constraintBottom_toTopOf="@id/recycler" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/main_guideline_top"
