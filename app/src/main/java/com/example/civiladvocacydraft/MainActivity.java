@@ -74,6 +74,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Set the title
+        setTitle("Civil Advocacy");
+
         locationDisplay = findViewById(R.id.location);
 
 
@@ -239,22 +242,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             builder.setView(et);
 
 
-            builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int id) {
+            builder.setPositiveButton("OK", (dialog, id) -> {
 
-                    code = et.getText().toString();
-                    PLoaderRunnable politicianLoaderRunnableTwo = new PLoaderRunnable(MainActivity.this, code);
-                    new Thread(politicianLoaderRunnableTwo).start();
+                code = et.getText().toString();
+                PLoaderRunnable politicianLoaderRunnableTwo = new PLoaderRunnable(MainActivity.this, code);
+                new Thread(politicianLoaderRunnableTwo).start();
 
-                }
             });
 
-            builder.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int id) {
+            builder.setNegativeButton("CANCEL", (dialog, id) -> {
 
 
-
-                }
 
             });
 
@@ -269,10 +267,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         else if (item.getItemId()==R.id.info_icon) {
 
-
-
-
-
+            Intent intent = new Intent(this, InfoActivity.class);
+            startActivity(intent);
 
         }
 

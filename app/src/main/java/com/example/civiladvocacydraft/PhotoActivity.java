@@ -32,6 +32,9 @@ public class PhotoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.photo_activity);
 
+        //Set the title
+        setTitle("Civil Advocacy");
+
 
         Intent intent = getIntent();
 

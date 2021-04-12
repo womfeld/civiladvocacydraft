@@ -66,6 +66,9 @@ public class OfficialActivity extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.official_activity);
 
+        //Set the title
+        setTitle("Civil Advocacy");
+
         Intent intent = getIntent();
 
         if (intent.hasExtra("OfficialInfo")) {
