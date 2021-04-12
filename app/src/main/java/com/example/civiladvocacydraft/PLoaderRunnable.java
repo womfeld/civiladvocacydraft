@@ -166,6 +166,31 @@ public class PLoaderRunnable implements Runnable {
                 JSONArray officialsArray = jObjMain.getJSONArray("officials");
 
 
+
+
+                //Gets the normalized input to use as the display address
+                JSONObject normalizedInputObject = jObjMain.getJSONObject("normalizedInput");
+
+                String displayAddress = "";
+
+                if (normalizedInputObject.has("line1")) {
+                    if (!(normalizedInputObject.getString("line1").equals(""))) {
+                        displayAddress += normalizedInputObject.getString("line1") + ", ";
+                    }
+                }
+                if (normalizedInputObject.has("city")) {
+                    displayAddress += normalizedInputObject.getString("city") + ", ";
+                }
+                if (normalizedInputObject.has("state")) {
+                    displayAddress += normalizedInputObject.getString("state") + ' ';
+                }
+                if (normalizedInputObject.has("zip")) {
+                    displayAddress += normalizedInputObject.getString("zip");
+                }
+                //end of new code
+
+
+
                 //Must loop through the offices JSON Array, which stores all the political positions/jobs held
                 for (int i = 0; i < officesArray.length(); i++) {
                     JSONObject officeContent = (JSONObject) officesArray.get(i);
@@ -303,7 +328,10 @@ public class PLoaderRunnable implements Runnable {
                         } //end of if statement for has channels
 
 
-                        politicianList.add(new Politician(title, name, party, photoURL, officialURL, phone, email, address, twitterID, faceBookID, youtubeID));
+                        //Fall back on
+                        //politicianList.add(new Politician(title, name, party, photoURL, officialURL, phone, email, address, twitterID, faceBookID, youtubeID));
+
+                        politicianList.add(new Politician(title, name, party, photoURL, officialURL, phone, email, address, twitterID, faceBookID, youtubeID, displayAddress));
 
                         System.out.println("Hello");
 

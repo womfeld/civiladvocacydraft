@@ -23,10 +23,6 @@ import com.squareup.picasso.Picasso;
 public class OfficialActivity extends AppCompatActivity  {
 
 
-
-
-
-
     //Politician object
     private Politician p;
 

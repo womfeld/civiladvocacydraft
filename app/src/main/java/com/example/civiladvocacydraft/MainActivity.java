@@ -308,6 +308,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void updateData(ArrayList<Politician> pList) {
         politicianList.clear();
         politicianList.addAll(pList);
+
+        //Just added
+        locationDisplay.setText(pList.get(0).getDisplayAddress());
+
         pAdapter.notifyDataSetChanged();
     }
 
@@ -321,7 +325,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void showInvalidLocationDialog() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Enter a valid state, city, or zipcode");
+        builder.setMessage("Please enter a valid state, city, or zipcode");
         builder.setTitle("Invalid Location");
 
         AlertDialog dialog = builder.create();

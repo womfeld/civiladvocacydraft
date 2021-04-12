@@ -16,6 +16,9 @@ public class Politician implements Serializable {
     private String faceBookID;
     private String youtubeID;
 
+    //Just added
+    private String displayAddress;
+
 
 
 
@@ -35,6 +38,8 @@ public class Politician implements Serializable {
      */
 
 
+    //Fall back on
+    /*
     public Politician(String title, String name, String party, String photoURL, String officialURL, String phoneNumber, String email, String address, String twitterID, String faceBookID, String youtubeID) {
 
         this.title = title;
@@ -48,6 +53,26 @@ public class Politician implements Serializable {
         this.twitterID = twitterID;
         this.faceBookID = faceBookID;
         this.youtubeID = youtubeID;
+
+
+    }
+    */
+
+
+    public Politician(String title, String name, String party, String photoURL, String officialURL, String phoneNumber, String email, String address, String twitterID, String faceBookID, String youtubeID, String displayAddress) {
+
+        this.title = title;
+        this.name = name;
+        this.party = party;
+        this.photoURL = photoURL;
+        this.officialURL = officialURL;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.address = address;
+        this.twitterID = twitterID;
+        this.faceBookID = faceBookID;
+        this.youtubeID = youtubeID;
+        this.displayAddress = displayAddress;
 
 
     }
@@ -105,7 +130,11 @@ public class Politician implements Serializable {
     }
 
 
-    //public String getURL() { return this.url; }
+    //Just added
+
+    public String getDisplayAddress() {
+        return this.displayAddress;
+    }
 
 
     public void setName(String n) {
