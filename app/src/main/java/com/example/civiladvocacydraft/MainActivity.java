@@ -121,6 +121,37 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
 
+    //Just added
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+
+        outState.putSerializable("politicians", politicianList);
+        outState.putString("location", locationDisplay.getText().toString());
+
+
+        System.out.println(locationDisplay.getText().toString());
+
+
+        super.onSaveInstanceState(outState);
+
+    }
+
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+        locationDisplay.setText(savedInstanceState.getString("location"));
+
+        ArrayList<Politician> nList = (ArrayList<Politician>) savedInstanceState.getSerializable("politicians");
+
+        updateData(nList);
+
+
+    }
+
+
+
     //Makes sure the permission is on to allow locations and then retrieves the location
     //This is responsible for displaying location in app
     private void determineLocation() {

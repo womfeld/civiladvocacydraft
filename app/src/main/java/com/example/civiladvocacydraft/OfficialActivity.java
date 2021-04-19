@@ -152,7 +152,8 @@ public class OfficialActivity extends AppCompatActivity  {
 
             else {
                 partyLogo.setEnabled(false);
-                partyLogo.setVisibility(View.GONE);
+                //Just changed
+                partyLogo.setVisibility(View.INVISIBLE);
             }
 
 
